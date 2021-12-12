@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+</head>
+<body>
+    <h1>Hello, it's my amazing About!(indeed it's not so amazing)</h1>
+    <p>(Unfortunately, i haven't manage to display the table. I'll be delighted if you have some time to help me  to do it)</p>
+    <p>Please, scroll down to read some complicated definitions of the columns</p>
+    {% for m in menu -%}
+    <li><a href = "{url_for{dbase.db}}">menu[m]</a></li>
+    {% endfor -%}
+    <p>This table expose collected data about used cars.</p>
+    <p>Coe_left-time of COE(certificate of entitlement) left.</p>
+    <p>Coe_left_days- Coe_left in days.</p>
+    <p>Dep-annual depreciation, such amount of money,that should be saved annually to compensate the amount of money spent on the car.</p>
+    <p>Road Tax-annual payed tax for using public roads.</p>
+    <p>Dereg Value-discount on utilised(scrapped) or exported car.</p>
+    <p>COE-price of COE(Certificate of Entitlement) paid.</p>
+    <p>Engine Cap-engine capacity measured in cubic centimeters(1000cc=1l).</p>
+    <p>Curb Weight -mass of car.</p>
+    <p>OMV- the open market value is defined as the value assessed by the Singapore Customs, taking into account purchase price, freight, insurance and all other charges incidental to the sale and delivery of the car from country of manufacture to Singapore.</p>
+    <p>ARF - the additional registration fee  is a tax imposed upon registration of a vehicle, it is calculated based on a percentage of the OMV of your vehicle.</p>
+    <p>That means, you are required too pay for registration twice, ARF and when you get COE. </p>
+    <a class = "btn btn-success" href="/">Home</a>
+    <a class = "btn btn-warning" href="/Task1">Task1</a>
+    <a class = "btn btn-success" href="/Task2">Task2</a>
+    <a class = "btn btn-warning" href="/Task3">Task3</a>
+    <a class = "btn btn-success" href="/Task4">Task4</a>
+    <a class = "btn btn-warning" href="/Task5">Task5</a>
+    <a class = "btn btn-warning" href="/Task6">Task6</a>
+</body>
+</html>
