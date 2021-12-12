@@ -9,11 +9,24 @@
 </head>
 <body>
     <h1>Hello, it's my amazing Task1!</h1>
+<<<<<<< HEAD
     <img src="{{url_for('static', filename='6.png')}}" alt="отцентрированное изображение" />
     <p>Median Price value: 60787, Mean Price value: 81391, Standart Deviation Price value:81816
     <p> Median OMV value: 26763, Mean OMV value: 34312, Standart Deviation OMV value:34383</p>
     <p>Median EngineCap value: 1600, Mean EngineCap value: 2020, Standart Deviation EngineCap value:1350</p>
     <h2>Here we can have a look at some basic statics by columns Price, OMV and Engine Cap</h2>
+=======
+    <img src="{{url_for('static', filename='task1.png')}}" alt="отцентрированное изображение" />
+    {% for i in h %}
+    <td><h4>{{col[i]}}</h4><td>
+    <p>Median value: {{data[i][0]}}
+    <p>Mean value: {{data[i][1]}}
+    <p>Standart Deviation value: {{data[i][2]}} </p>
+    {% endfor %}
+
+
+    <h3>Here we can have a look at some basic statics by columns Price, OMV and Engine Cap</h3>
+>>>>>>> 0e74d98 (Initial commit)
     <a class = "btn btn-warning" href="/">Home</a>
     <a class = "btn btn-success" href="/About the project">About the project</a>
     <a class = "btn btn-success" href="/Task2">Task2</a>

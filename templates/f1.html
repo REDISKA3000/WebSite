@@ -9,12 +9,29 @@
 </head>
 <body>
     <h1>Hello, it's my amazing About!(indeed it's not so amazing)</h1>
+<<<<<<< HEAD
     <p>(Unfortunately, i haven't manage to display the table. I'll be delighted if you have some time to help me  to do it)</p>
     <p>Please, scroll down to read some complicated definitions of the columns</p>
     {% for m in menu -%}
     <li><a href = "{url_for{dbase.db}}">menu[m]</a></li>
     {% endfor -%}
     <p>This table expose collected data about used cars.</p>
+=======
+    <p>Please, scroll down to read some complicated definitions of the columns</p>
+<table>
+  <tbody>
+    {% for i in l %}
+    <tr>
+        <td><h4>{{column[i]}}</h4></td>
+      {% for value in data[:5] %}
+        <td> {{ value[i] }} </td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+    <p>This table expose collected data about used cars in Singapore.</p>
+>>>>>>> 0e74d98 (Initial commit)
     <p>Coe_left-time of COE(certificate of entitlement) left.</p>
     <p>Coe_left_days- Coe_left in days.</p>
     <p>Dep-annual depreciation, such amount of money,that should be saved annually to compensate the amount of money spent on the car.</p>
