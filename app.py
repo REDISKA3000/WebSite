@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-import sqlite3
-
-from flask import Flask, render_template, url_for, g
-from config import Config
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_table import Col
-from models import FDataBase
-import pandas as pd
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dbase.db'
-db = SQLAlchemy(app)
-
-
-def connect_db():
-    conn = sqlite3.connect('dbase.db')
-    cur = conn.cursor()
-    cur.execute('''SELECT * FROM t''')
-    data = cur.fetchall()
-    return data
-
-
-connect_db()
-=======
 from flask import Flask, render_template, url_for, g
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -59,7 +33,6 @@ def DtoD(i):
 df.loc[(df['Coe_left_days'].isnull()), 'Coe_left_days'] = '0'
 for i in range(0, 4411):
     df.loc[[i], 'Coe_left_days'] = DtoD(list(df.loc[[i], 'Coe_left_days'])[0])
->>>>>>> 0e74d98 (Initial commit)
 
 
 @app.route('/')
@@ -69,23 +42,17 @@ def f():
 
 @app.route('/About the project')
 def about():
-<<<<<<< HEAD
     dba = connect_db()
     return render_template("f1.html", menu=dba)
-=======
     [1, 2, 3]
     t = pd.read_csv("SG_usedcar.csv")
     table = pd.DataFrame(t)
     l = [ i for i in range(len(table.columns))]
     return render_template("f1.html", data=table.values,column=table.columns,l=l)
->>>>>>> 0e74d98 (Initial commit)
 
 
 @app.route('/Task1')
 def f1():
-<<<<<<< HEAD
-    return render_template("f2.html")
-=======
     import numpy as np
     l = []
     k=['Price', 'OMV', 'EngineCap']
@@ -115,13 +82,10 @@ def f1():
     plt.savefig('static/task1.png')
     h=[0,1,2]
     return render_template("f2.html", data=l,col=k,h=h)
->>>>>>> 0e74d98 (Initial commit)
 
 
 @app.route('/Task2')
 def f2():
-<<<<<<< HEAD
-=======
     l = list(df['Brand'].value_counts())[:15]
     l1 = list(df['Brand'].value_counts().reset_index()['index'])[:15]
     plt.figure(figsize=[7, 4])
@@ -137,27 +101,21 @@ def f2():
     plt.yticks(fontsize=8)
     plt.barh(l3, l2)
     plt.savefig('static/task2_1.png')
->>>>>>> 0e74d98 (Initial commit)
     return render_template("f3.html")
 
 
 @app.route('/Task3')
 def f3():
-<<<<<<< HEAD
-=======
     fig, ax = plt.subplots()
     ax.boxplot(df['Coe_left_days'].values)
     ax.set_xlabel('Boxplot')
     ax.set_ylabel('Days')
     plt.savefig('static/task3.png')
->>>>>>> 0e74d98 (Initial commit)
     return render_template("f4.html")
 
 
 @app.route('/Task4')
 def f4():
-<<<<<<< HEAD
-=======
     l = df[df['NoOfOwners'] != 'N.A']['NoOfOwners'].value_counts()
     k = df[df['NoOfOwners'] != 'N.A']['NoOfOwners'].count()
     l = [l[0], l[1], l[2], l[3:].sum()]
@@ -165,14 +123,11 @@ def f4():
               '3 owners-' + str(int(l[2] / k * 100)) + '%', 'More than 4 owners-' + str(int(l[3] / k * 100)) + '%']
     plt.pie(l, labels=owners)
     plt.savefig('static/task4.png')
->>>>>>> 0e74d98 (Initial commit)
     return render_template("f5.html")
 
 
 @app.route('/Task5')
 def f5():
-<<<<<<< HEAD
-=======
     df['OMV'] = list(map(lambda x: int(x), list(df['OMV'].values)))
     df['ARF'] = list(map(lambda x: int(x), list(df['ARF'].values)))
     x = df.sort_values('OMV')['OMV'].values
@@ -184,14 +139,11 @@ def f5():
     ax.set_xlabel("OMV", fontsize=10)
     ax.set_ylabel("ARF", fontsize=10)
     plt.savefig('static/task5.png')
->>>>>>> 0e74d98 (Initial commit)
     return render_template("f6.html")
 
 
 @app.route('/Task6')
 def f6():
-<<<<<<< HEAD
-=======
     global df
     df['Dep'] = list(map(lambda x: int(x), list(df['Dep'].values)))
     df['Price'] = list(map(lambda x: int(x), list(df['Price'].values)))
@@ -209,7 +161,6 @@ def f6():
     ax.set_xlabel("Coe_left_days", fontsize=12)
     ax.set_ylabel("Dep%", fontsize=12)
     plt.savefig('static/task6.png')
->>>>>>> 0e74d98 (Initial commit)
     return render_template("f7.html")
 
 
